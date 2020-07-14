@@ -1,0 +1,25 @@
+[package]
+name = "ivybuildtools"
+description = "Python build utilities for generating installable Python modules from Pipenv files"
+url = "https://github.com/nxtlytics/ivy-build-tools-py"
+author = "NXTlytics"
+
+[scripts]
+lint = "python -m black --target-version py37 --line-length 120 --check ."
+lint-fix = "python -m black --target-version py37 --line-length 120 ."
+test = "python -m pytest -v --junitxml=tmp/test-output/pytest.xml"
+
+[packages]
+setuptools = "*"
+wheel = "*"
+twine = "*"
+pipfile = "*"
+toml = "*"
+
+[dev-packages]
+pytest = "*"
+# Must be hard set to a version to avoid pre-release warning.
+black = "==19.3b0"
+
+[requires]
+python_version = "3.7"
